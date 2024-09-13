@@ -5,10 +5,12 @@ import './OurArsenal.css'; // For styling
 const OurArsenal = () => {
   return (
     <div className="arsenal-container">
-      <h1 className="arsenal-title">OUR ARSENAL</h1>
-      <h2 className="arsenal-subtitle">PHOTOGRAPHY</h2>
-      <h2 className="arsenal-subtitle">PACKAGING</h2>
-      <h2 className="arsenal-subtitle">BRANDING</h2>
+      
+      <a href="/photography" className="arsenal-title">OUR ARSENAL</a>
+      <a href="/photography" className="arsenal-subtitle">PHOTOGRAPHY</a>
+      <a href="/packaging" className="arsenal-subtitle">PACKAGING</a>
+      <a href="/branding" className="arsenal-subtitle">BRANDING</a>
+      
     </div>
   );
 };

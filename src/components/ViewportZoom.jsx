@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import '../../src/App.css'
+import '../../src/App.css';
+import news from "../newspaper.jpg";
 
 
 const ViewportZoom = () => {
@@ -25,11 +26,10 @@ const ViewportZoom = () => {
 
   return (
     <div className="viewport-container">
+      
       <div className={`viewport ${activeDiv === null ? "zoom-out" : `zoom-in-${activeDiv}`}`}>
-        <div className="zoomable">Div 1</div>
-        <div className="zoomable">Div 2</div>
-        <div className="zoomable">Div 3</div>
-        <div className="zoomable">Div 4</div>
+      <img src={news} alt="no pic" />
+      
       </div>
     </div>
   );
