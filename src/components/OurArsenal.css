@@ -1,0 +1,27 @@
+/* OurArsenal.css */
+.arsenal-container {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0; /* Removes any extra margin */
+    padding: 0;
+  }
+  
+  .arsenal-title {
+    font-size: 8vw; /* Responsive font size based on viewport width */
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .arsenal-subtitle {
+    font-size: 5vw; /* Responsive font size based on viewport width */
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
