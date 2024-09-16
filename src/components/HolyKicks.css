@@ -1,50 +1,138 @@
-/* HolyKicks.css */
 @keyframes slideUp {
   from {
-    transform: translateY(150%); /* Start the text lower to avoid overlap */
-    opacity: 0;
+    transform: translateY(100%); /* Start the text lower to avoid overlap */
   }
   to {
     transform: translateY(0);
-    opacity: 1;
   }
 }
 
-/* Apply slide-up animation to each word */
+@keyframes openCurtain {
+  0% {
+    transform: translateX(0); /* Start with curtains closed */
+  }
+  100% {
+    transform: translateX(-50%); /* Move the left curtain to the left */
+  }
+}
+
+.container {
+  background-color: black;
+  color: white;
+  min-height: 600px;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  padding: 2rem;
+  position: relative;
+  overflow: hidden; /* Ensure the text and curtain are masked properly */
+}
+
+.curtain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  z-index: 1;
+}
+
+.curtain-left, .curtain-right {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: black;
+  transition: transform 4s ease-in-out; /* Slow curtain animation */
+  /* Add a slight shadow for more visual impact */
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.curtain-left {
+  left: 0;
+  transform: translateX(0);
+}
+
+.curtain-right {
+  right: 0;
+  transform: translateX(100%); /* Start the right curtain off-screen */
+  /* Add a shadow effect to the right curtain */
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.curtain-open .curtain-left {
+  transform: translateX(-100%); /* Move the left curtain off-screen */
+}
+
+.curtain-open .curtain-right {
+  transform: translateX(0); /* Bring the right curtain into view */
+}
+
+.content {
+  position: relative;
+  z-index: 2; /* Ensure content is above the curtain */
+}
+
+.headerText, .yearSection {
+  position: relative;
+  overflow: hidden; /* Mask content within this section */
+}
+
+.headerText h1, .headerText p, .yearSection h1, .yearSection p {
+  position: relative;
+  animation: slideUp 2s ease-in-out forwards; /* Slow text animation */
+  /* Ensure text doesn't reanimate */
+  animation-fill-mode: both;
+}
+
+.mainTitle {
+  font-size: 4rem;
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
+
+.subTitle {
+  font-size: 1rem;
+  margin: 0.2rem 0;
+}
+
+.yearSection {
+  text-align: left;
+}
+
+.year {
+  font-size: 10rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.backText {
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* Animation delays for individual words */
 .word {
   display: inline-block;
-  opacity: 0;
-  animation: slideUp 1s ease-in-out forwards;
-  animation-fill-mode: forwards;
-  margin-bottom: 0.5rem; /* Add some space between lines */
+  animation: slideUp 2s ease-in-out forwards; /* Slow word animation */
+  /* Ensure words don't reanimate */
+  animation-fill-mode: both;
 }
 
-/* Larger text elements like "BRANDING" and "BACK" should animate as a block */
-.slide-up {
-  display: block;
-  opacity: 0;
-  animation: slideUp 1s ease-in-out forwards;
-  animation-fill-mode: forwards;
-  margin-bottom: 1rem; /* Add more space between larger elements */
+.late-animation {
+  animation-delay: 2s; /* Adjust delay to match new animation duration */
 }
 
-/* Add a delay for each word */
+/* Animation delays for individual words */
 .word:nth-child(1) {
   animation-delay: 0.2s;
 }
 
 .word:nth-child(2) {
   animation-delay: 0.4s;
-}
-
-/* Custom animation delay for "2019" and "BACK" */
-.late-animation {
-  animation-delay: 1.5s;
-}
-
-/* Ensure there's sufficient margin between animated elements */
-.yearSection h1, .yearSection p {
-  margin-top: 2rem; /* Add space between "2019" and "BACK" */
 }
 
 .word:nth-child(3) {
