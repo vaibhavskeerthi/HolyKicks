@@ -1,0 +1,26 @@
+.custom-modal .modal-content {
+    background-color: black; /* Set the modal background color to black */
+    color: white; /* Set text color to white for contrast (if needed) */
+    animation: zoomIn 0.3s ease-in-out forwards; /* Use forwards to maintain the final state */
+    transform-origin: center; /* Ensure it scales from the center */
+    border: none; /* Remove any borders */
+}
+
+.custom-modal .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.9) !important; /* Set the backdrop color to black with slight transparency */
+}
+
+.custom-modal .modal-body img {
+    border-radius: 8px; /* Optionally, add rounded corners to the image */
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.7); /* Start smaller */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: scale(1); /* End at full size */
+        opacity: 1; /* Fade in */
+    }
+}

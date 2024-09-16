@@ -3,6 +3,7 @@ import HolyKicks from './components/HolyKicks';
 import HolyKicksClone from './components/HolyKicksClone'; // Import the clone component
 import ViewportZoom from './components/ViewportZoom';
 import OurArsenal from './components/OurArsenal';
+import ImagePop from './components/ImagePopup';
 function App() {
   const [showFirstComponent, setShowFirstComponent] = useState(true);
 
@@ -18,6 +19,7 @@ function App() {
       <ViewportZoom />
       
       <OurArsenal />
+      <ImagePop />
     
       </>
   );
